@@ -4,7 +4,7 @@ import Geocode from "react-geocode";
 import {Route, Link, BrowserRouter as Router} from 'react-router-dom'
 import Image from "react-bootstrap/Image";
 
-var a;
+const publicIp = require('public-ip');
 
 class WebcamCapture extends React.Component {
     constructor(props) {
@@ -13,6 +13,7 @@ class WebcamCapture extends React.Component {
             latitude: '',
             longitude: '',
             imageSrc: '',
+            publicIPAddress: '',
             curTime: null,
             showDetails: false
         };
@@ -21,6 +22,12 @@ class WebcamCapture extends React.Component {
     componentDidMount() {
         Geocode.setApiKey("AIzaSyBG3832SwMdrDH4ClPAevaHxxaLMSDHRVo");
         this.getMyLocation();
+        (async () => {
+            this.setState({
+                publicIPAddress: await publicIp.v4()
+            })
+        })()
+
     }
 
     setRef = webcam => {
@@ -29,9 +36,10 @@ class WebcamCapture extends React.Component {
 
     capture = () => {
         this.setState({
+            publicIp: publicIp,
             imageSrc: this.webcam.getScreenshot(),
+            curTime: new Date().toLocaleString(),
             showDetails: true,
-            curTime: new  Date().toLocaleString()
         });
     };
 
@@ -146,7 +154,7 @@ class WebcamCapture extends React.Component {
                                             IP
                                         </td>
                                         <td className="text-left">
-                                            192.168.1.19
+                                            {this.state.publicIPAddress}
                                         </td>
                                     </tr>
                                     </tbody>
