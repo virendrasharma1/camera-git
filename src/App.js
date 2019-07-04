@@ -2,28 +2,27 @@ import React from 'react';
 import './App.css';
 import logo from './assets/logo.png';
 import WebcamCapture from "./components/WebcamCapture";
-import {Link} from "react-router-dom";
+import {BrowserRouter as Router, Link, Redirect, Route} from "react-router-dom";
+import Navbar from "./components/navbar";
 
 function App() {
 
-    return (
-        <div>
-            <nav className="navbar navbar-static">
-                <div className="container-fluid">
-                    <div className="navbar-header">
-                        <a className="navbar-brand" href="/">
-                            <img src={logo} className='brandLogo'/>
-                        </a>
-                    </div>
-                </div>
-            </nav>
+    const routing = (
+        <Router>
+            <div>
+                <Route path="" component={WebcamCapture}/>
+            </div>
+        </Router>
+    );
 
-        <div className='cameraMainBlock'>
-        {/*<WebcamCapture/>*/}
-            <Link to="/webcam">
-            <button className="btn btn-primary">Go to main page</button>
-            </Link>
-        </div>
+    return (
+
+
+        <div>
+            <Navbar/>
+            <div className='cameraMainBlock'>
+                <WebcamCapture/>
+            </div>
         </div>
     );
 }

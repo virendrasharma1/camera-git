@@ -13,12 +13,14 @@ class WebcamCapture extends React.Component {
             latitude: '',
             longitude: '',
             imageSrc: '',
-            isLoggedIn: true
+            curTime: null,
+            showDetails: false
         };
     }
 
     componentDidMount() {
         Geocode.setApiKey("AIzaSyBG3832SwMdrDH4ClPAevaHxxaLMSDHRVo");
+        this.getMyLocation();
     }
 
     setRef = webcam => {
@@ -26,10 +28,16 @@ class WebcamCapture extends React.Component {
     };
 
     capture = () => {
-        this.getMyLocation();
         this.setState({
             imageSrc: this.webcam.getScreenshot(),
-            isLoggedIn : false
+            showDetails: true,
+            curTime: new  Date().toLocaleString()
+        });
+    };
+
+    returnBack = () => {
+        this.setState({
+            showDetails: false
         });
     };
 
@@ -47,7 +55,6 @@ class WebcamCapture extends React.Component {
                 Geocode.fromLatLng(latitude, longitude).then(
                     response => {
                         const address = response.results[0].formatted_address;
-                        alert(address);
                     },
                     error => {
                         console.error(error);
@@ -66,9 +73,8 @@ class WebcamCapture extends React.Component {
             height: 1000,
             facingMode: "user"
         };
-        if (this.state.isLoggedIn) {
+        if (!this.state.showDetails) {
             return (
-
                 <div className='text-center'>
                     <Webcam
                         audio={false}
@@ -79,21 +85,87 @@ class WebcamCapture extends React.Component {
                         width={800}
                         videoConstraints={videoConstraints}
                     />
-                    <button onClick={this.capture} className="btn btn-primary" data-toggle="modal"
-                            data-target="#exampleModal"> Capture Screenhot and Location
-                    </button>
-
+                    <div className="align-v-h-center">
+                        <button onClick={this.capture}
+                                className="btn btn-primary cameraButton"
+                                data-toggle="modal"
+                                data-target="#exampleModal">
+                            <i className="fa fa-camera"/>
+                        </button>
+                    </div>
                 </div>
             );
         } else {
             return (
-                <div>
-                <img src={this.state.imageSrc}/>
-                <p>Latitude : {this.state.latitude}</p>
-                <p>Longitude : {this.state.longitude}</p>
+                <div className='text-center'>
+                    <div className="col-lg-12">
+                        <div className="col-lg-12 capturedImage">
+                            <img src={this.state.imageSrc}/>
+                        </div>
+                        <div className="col-lg-12">
+                            <div className="table-responsive">
+                                <table className="table table-bordered table-striped">
+                                    <tbody>
+                                    <tr>
+                                        <td className="text-left">
+                                            Latitude
+                                        </td>
+                                        <td className="text-left">
+                                            {this.state.latitude}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="text-left">
+                                            Longitude
+                                        </td>
+                                        <td className="text-left">
+                                            {this.state.longitude}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="text-left">
+                                            Address
+                                        </td>
+                                        <td className="text-left">
+                                            <p>Defense Layout, 1st Floor, 9th Main</p>
+                                            <p>D-Block, Sahakara Nagar</p>
+                                            <p>Bengaluru - 560092</p>
+                                            <p>Karnataka, India</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="text-left">
+                                            Taken on
+                                        </td>
+                                        <td className="text-left">
+                                            {this.state.curTime}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="text-left">
+                                            IP
+                                        </td>
+                                        <td className="text-left">
+                                            192.168.1.19
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className="text-center">
+                        <button onClick={this.returnBack}
+                                className="btn btn-primary">
+                            Capture Again
+                        </button>
+                    </div>
                 </div>
             );
         }
+
     }
 }
 

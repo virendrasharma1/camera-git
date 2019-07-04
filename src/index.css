@@ -48,3 +48,30 @@ video{
 .brandLogo{
   width: 150px;
 }
+.cameraButton{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+}
+.cameraButton:focus{
+  outline: none !important;
+  box-shadow: none;
+}
+.align-v-h-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.capturedImage img{
+  width: 80%;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+}
+.border-none-table tbody tr td{
+  border: none;
+}
