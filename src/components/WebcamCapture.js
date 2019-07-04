@@ -64,12 +64,12 @@ class WebcamCapture extends React.Component {
         const videoConstraints = {
             width: 1280,
             height: 1000,
-            facingMode: "environment"
+            facingMode: "user"
         };
         if (this.state.isLoggedIn) {
             return (
 
-                <div>
+                <div className='text-center'>
                     <Webcam
                         audio={false}
                         height={450}
