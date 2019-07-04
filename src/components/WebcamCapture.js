@@ -35,10 +35,11 @@ class WebcamCapture extends React.Component {
     };
 
     capture = () => {
+        let today = new Date();
         this.setState({
             publicIp: publicIp,
             imageSrc: this.webcam.getScreenshot(),
-            curTime: new Date().toLocaleDateString(),
+            curTime: today.getDate() + "-"+ parseInt(today.getMonth()+1) +"-"+today.getFullYear() + " " + today.getHours()+":"+ today.getMinutes()+":"+today.getSeconds(),
             showDetails: true,
         });
     };
