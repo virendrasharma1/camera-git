@@ -38,7 +38,7 @@ class WebcamCapture extends React.Component {
         this.setState({
             publicIp: publicIp,
             imageSrc: this.webcam.getScreenshot(),
-            curTime: new Date().toLocaleString(),
+            curTime: new Date().toLocaleDateString(),
             showDetails: true,
         });
     };
@@ -128,17 +128,6 @@ class WebcamCapture extends React.Component {
                                         </td>
                                         <td className="text-left">
                                             {this.state.longitude}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="text-left">
-                                            Address
-                                        </td>
-                                        <td className="text-left">
-                                            <p>Defense Layout, 1st Floor, 9th Main</p>
-                                            <p>D-Block, Sahakara Nagar</p>
-                                            <p>Bengaluru - 560092</p>
-                                            <p>Karnataka, India</p>
                                         </td>
                                     </tr>
                                     <tr>
