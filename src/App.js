@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import logo from './assets/logo.png';
+import WebcamCapture from "./components/WebcamCapture";
+import {Link} from "react-router-dom";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+        <div>
+            <nav className="navbar navbar-static">
+                <div className="container-fluid">
+                    <div className="navbar-header">
+                        <a className="navbar-brand" href="/">
+                            <img src={logo} className='brandLogo'/>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+        <div className='cameraMainBlock'>
+        {/*<WebcamCapture/>*/}
+            <Link to="/webcam">
+            <button className="btn btn-primary">Go to main page</button>
+            </Link>
+        </div>
+        </div>
+    );
 }
 
 export default App;

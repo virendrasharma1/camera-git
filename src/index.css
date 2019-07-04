@@ -11,3 +11,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+video{
+  width: 100%;
+}
+.navbar-static{
+  border-radius: 0;
+  margin-bottom: 0;
+  -webkit-box-shadow: 0 8px 6px -6px #e8e8e8;
+  -moz-box-shadow: 0 8px 6px -6px #e8e8e8;
+  box-shadow: 0 8px 6px -6px #e8e8e8;
+}
+.cameraMainBlock{
+  text-align: center;
+}
+.btn-primary{
+  border-radius: 0;
+  margin: 1.5em 0;
+  background-color: #24a7f8;
+  background-image: linear-gradient(to bottom, #24a7f8, #24a7f8);
+  border-color: #24a7f8;
+  box-shadow: none;
+  font-size: 18px;
+  text-shadow: none;
+  padding: 3px 20px;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus{
+  background-color: #28d9f8;
+  background-image: linear-gradient(to bottom, #28d9f8, #28d9f8);
+  border-color: #28d9f8;
+}
+.navbar-brand{
+  padding: 0 10px;
+}
+.brandLogo{
+  width: 150px;
+}
