@@ -86,7 +86,7 @@ class WebcamCapture extends React.Component {
                 <div className='text-center'>
                     <Webcam
                         audio={false}
-                        height={450}
+                        height={400}
                         ref={this.setRef}
                         screenshotQuality={1}
                         screenshotFormat="image/jpeg"
