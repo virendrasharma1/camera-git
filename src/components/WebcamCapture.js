@@ -1,8 +1,6 @@
 import React from 'react';
 import Webcam from "react-webcam";
 import Geocode from "react-geocode";
-import {Route, Link, BrowserRouter as Router} from 'react-router-dom'
-import Image from "react-bootstrap/Image";
 
 const publicIp = require('public-ip');
 
@@ -39,7 +37,7 @@ class WebcamCapture extends React.Component {
         this.setState({
             publicIp: publicIp,
             imageSrc: this.webcam.getScreenshot(),
-            curTime: today.getDate() + "-"+ parseInt(today.getMonth()+1) +"-"+today.getFullYear() + " " + today.toLocaleTimeString('en-US', { hour: 'numeric', hour12: true, minute: 'numeric' }),
+            curTime: today.getDate() + "-"+ parseInt(today.getMonth()+1) +"-"+today.getFullYear() + " " + today.getHours()+":"+ today.getMinutes()+":"+today.getSeconds(),
             showDetails: true,
         });
     };
@@ -52,10 +50,8 @@ class WebcamCapture extends React.Component {
 
     getMyLocation = (e) => {
         navigator.geolocation.getCurrentPosition(
-            //Will give you the current location
             (position) => {
                 const latitude = JSON.stringify(position.coords.longitude);
-                //getting the Longitude from the location json
                 const longitude = JSON.stringify(position.coords.latitude);
                 this.setState({
                     latitude,
@@ -69,7 +65,6 @@ class WebcamCapture extends React.Component {
                         console.error(error);
                     }
                 );
-                //getting the Latitude from the location json
             },
             (error) => console.log(error.message)
         );
@@ -87,13 +82,10 @@ class WebcamCapture extends React.Component {
                 <div className='text-center'>
                     <Webcam
                         audio={false}
-                        height={400}
                         ref={this.setRef}
                         screenshotQuality={1}
                         screenshotFormat="image/jpeg"
-                        width={800}
-                        videoConstraints={videoConstraints}
-                    />
+                        videoConstraints={videoConstraints}/>
                     <div className="align-v-h-center">
                         <button onClick={this.capture}
                                 className="btn btn-primary cameraButton"
@@ -107,57 +99,38 @@ class WebcamCapture extends React.Component {
         } else {
             return (
                 <div className='text-center'>
-                    <div className="col-lg-12">
-                        <div className="col-lg-12 capturedImage">
+                    <div className="col-lg-12 p-0">
+                        <div className="col-lg-12 p-0 capturedImage">
                             <img src={this.state.imageSrc}/>
                         </div>
-                        <div className="col-lg-12">
-                            <div className="table-responsive">
-                                <table className="table table-bordered table-striped">
-                                    <tbody>
-                                    <tr>
-                                        <td className="text-left">
-                                            Latitude
-                                        </td>
-                                        <td className="text-left">
-                                            {this.state.latitude}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="text-left">
-                                            Longitude
-                                        </td>
-                                        <td className="text-left">
-                                            {this.state.longitude}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="text-left">
-                                            Taken on
-                                        </td>
-                                        <td className="text-left">
-                                            {this.state.curTime}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="text-left">
-                                            IP
-                                        </td>
-                                        <td className="text-left">
-                                            {this.state.publicIPAddress}
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+
+                        <div className="col-lg-12 capturedImageInfoBottom">
+                            <div className="infoBlur">.</div>
+                            <div className="col-sm-6">
+                                <p className="text-left">Taken on:{this.state.curTime}</p>
+                            </div>
+                            <div className="col-sm-6">
+                                <p className="text-right">IP:{this.state.publicIPAddress}</p>
+                            </div>
+                        </div>
+                        <div className="col-lg-12 capturedImageInfo">
+                            <div className="infoBlur">.</div>
+                            <div className="col-sm-6">
+                                <p className="text-left">Latitude:{this.state.latitude}</p>
+                            </div>
+                            <div className="col-sm-6">
+                                <p className="text-right">Longitude:{this.state.longitude}</p>
                             </div>
                         </div>
                     </div>
 
 
-                    <div className="text-center">
-                        <button onClick={this.returnBack}
-                                className="btn btn-primary">
-                            Capture Again
+                    <div className="text-center captureAgain align-v-h-center">
+                        <button  onClick={this.returnBack}
+                                className="btn btn-primary cameraButton"
+                                data-toggle="modal"
+                                data-target="#exampleModal">
+                            <i className="fa fa-camera"/>
                         </button>
                     </div>
                 </div>
