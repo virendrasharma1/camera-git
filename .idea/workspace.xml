@@ -988,11 +988,7 @@
       <change afterPath="$PROJECT_DIR$/../jwt/src/main/java/com/example/jwt/utils/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build.gradle" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../buildspec.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/WebcamCapture.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WebcamCapture.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gradlew" beforeDir="false" />
@@ -1827,7 +1823,7 @@
         <counts>
           <entry key="css" value="319" />
           <entry key="html" value="39" />
-          <entry key="js" value="2514" />
+          <entry key="js" value="2516" />
           <entry key="json" value="19" />
         </counts>
       </usages-collector>
@@ -1836,7 +1832,7 @@
           <entry key="CSS" value="319" />
           <entry key="HTML" value="39" />
           <entry key="JSON" value="19" />
-          <entry key="JavaScript" value="2514" />
+          <entry key="JavaScript" value="2516" />
         </counts>
       </usages-collector>
     </session>
@@ -1846,8 +1842,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/WebcamCapture.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+            <state relative-caret-position="51">
+              <caret line="39" column="124" lean-forward="true" selection-start-line="39" selection-start-column="124" selection-end-line="39" selection-end-column="124" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -1969,7 +1965,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="514" />
     <option name="y" value="19" />
     <option name="width" value="1890" />
@@ -2061,15 +2057,16 @@
       <workItem from="1562135923532" duration="15528000" />
       <workItem from="1562213062331" duration="21162000" />
       <workItem from="1562306439256" duration="2698000" />
-      <workItem from="1562668497149" duration="262000" />
+      <workItem from="1562668497149" duration="957000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39650000" />
+    <option name="totallyTimeSpent" value="40345000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="343" y="13" width="1260" height="620" extended-state="0" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2574899" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -2088,7 +2085,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3291815" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.59342915" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.5142349" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -2204,8 +2201,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/WebcamCapture.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+        <state relative-caret-position="51">
+          <caret line="39" column="124" lean-forward="true" selection-start-line="39" selection-start-column="124" selection-end-line="39" selection-end-column="124" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
