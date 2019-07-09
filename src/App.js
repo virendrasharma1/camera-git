@@ -17,7 +17,7 @@ function App() {
     return (
 
 
-        <div>
+        <div className="cameraParentBlock">
             <Navbar/>
             <div className='cameraMainBlock'>
                 <WebcamCapture/>

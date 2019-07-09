@@ -79,13 +79,12 @@ class WebcamCapture extends React.Component {
         };
         if (!this.state.showDetails) {
             return (
-                <div className='text-center'>
-                    <Webcam
-                        audio={false}
-                        ref={this.setRef}
-                        screenshotQuality={1}
-                        screenshotFormat="image/jpeg"
-                        videoConstraints={videoConstraints}/>
+                <div className='text-center cameraHeightBlock'>
+                    <Webcam audio={false}
+                            ref={this.setRef}
+                            screenshotQuality={1}
+                            screenshotFormat="image/jpeg"
+                            videoConstraints={videoConstraints}/>
                     <div className="align-v-h-center">
                         <button onClick={this.capture}
                                 className="btn btn-primary cameraButton"
@@ -123,7 +122,6 @@ class WebcamCapture extends React.Component {
                             </div>
                         </div>
                     </div>
-
 
                     <div className="text-center captureAgain align-v-h-center">
                         <button  onClick={this.returnBack}
