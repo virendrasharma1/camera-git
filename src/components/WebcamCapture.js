@@ -25,7 +25,6 @@ class WebcamCapture extends React.Component {
                 publicIPAddress: await publicIp.v4()
             })
         })()
-
     }
 
     setRef = webcam => {
@@ -68,7 +67,6 @@ class WebcamCapture extends React.Component {
             },
             (error) => console.log(error.message)
         );
-
     };
 
     render() {
