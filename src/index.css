@@ -16,7 +16,7 @@ code {
 }
 video{
   width: 100%;
-  height: 100%;
+  height: 800px;
   object-fit: cover;
 }
 .navbar-static{
@@ -160,5 +160,5 @@ video{
   position: relative;
 }
 .cameraParentBlock{
-  height: 1000px;
+  height: 800px;
 }
