@@ -45,6 +45,7 @@ class WebcamCapture extends React.Component {
         this.setState({
             showDetails: false
         });
+        alert('Data send Successfully!')
     };
 
     getMyLocation = (e) => {
@@ -97,36 +98,37 @@ class WebcamCapture extends React.Component {
             return (
                 <div className='text-center'>
                     <div className="col-lg-12 p-0">
+                        <div className="col-lg-12 capturedImageInfoBottom">
+                            <div className="infoBlur">.</div>
+                            <div className="col-sm-6">
+                                <p className="text-left">IP:{this.state.publicIPAddress}</p>
+                            </div>
+                            <div className="col-sm-6">
+                                <p className="text-right">Taken on:{this.state.curTime}</p>
+                            </div>
+                        </div>
+
                         <div className="col-lg-12 p-0 capturedImage">
                             <img src={this.state.imageSrc}/>
                         </div>
 
-                        <div className="col-lg-12 capturedImageInfoBottom">
-                            <div className="infoBlur">.</div>
-                            <div className="col-sm-6">
-                                <p className="text-left">Taken on:{this.state.curTime}</p>
-                            </div>
-                            <div className="col-sm-6">
-                                <p className="text-right">IP:{this.state.publicIPAddress}</p>
-                            </div>
-                        </div>
                         <div className="col-lg-12 capturedImageInfo">
                             <div className="infoBlur">.</div>
                             <div className="col-sm-6">
-                                <p className="text-left">Latitude:{this.state.latitude}</p>
+                                <p className="text-left">Longitude:{this.state.longitude}</p>
                             </div>
                             <div className="col-sm-6">
-                                <p className="text-right">Longitude:{this.state.longitude}</p>
+                                <p className="text-right">Latitude:{this.state.latitude}</p>
                             </div>
                         </div>
                     </div>
 
                     <div className="text-center captureAgain align-v-h-center">
                         <button  onClick={this.returnBack}
-                                className="btn btn-primary cameraButton"
+                                className="btn btn-info"
                                 data-toggle="modal"
                                 data-target="#exampleModal">
-                            <i className="fa fa-camera"/>
+                            SEND
                         </button>
                     </div>
                 </div>
@@ -134,7 +136,5 @@ class WebcamCapture extends React.Component {
         }
     }
 }
-
-
 
 export default WebcamCapture;

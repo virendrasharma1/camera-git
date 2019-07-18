@@ -105,11 +105,12 @@ video{
   position: absolute;
   right: 0;
   bottom: 0;
-  padding: .3em;
+  padding: .4em;
   width: 100%;
+  z-index: 9;
 }
 .capturedImageInfoBottom p{
-  font-size: 10px;
+  font-size: 1.2rem;
   margin-bottom: 0;
   color: #fff;
   position: relative;
@@ -122,10 +123,10 @@ video{
   right: 0;
   top: 0;
   width: 100%;
-  padding: .3em;
+  padding: .43em;
 }
 .capturedImageInfo p{
-  font-size: 10px;
+  font-size: 1.2rem;
   margin-bottom: 0;
   color: #fff;
   position: relative;
@@ -145,7 +146,7 @@ video{
   left: 0;
   height: 100%;
   width: 100%;
-  opacity: .6;
+  opacity: .3;
   background: #333333;
 }
 .p-0{
@@ -153,6 +154,14 @@ video{
 }
 .captureAgain{
   position: relative;
+  margin-top: 1em;
+}
+.captureAgain .btn-info,
+.captureAgain .btn-info:focus{
+  outline: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 0 0 rgba(204,169,44, 0.4);
 }
 #root{
   position: absolute;
