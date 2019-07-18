@@ -100,11 +100,11 @@ class WebcamCapture extends React.Component {
                     <div className="col-lg-12 p-0">
                         <div className="col-lg-12 capturedImageInfoBottom">
                             <div className="infoBlur">.</div>
-                            <div className="col-sm-6">
-                                <p className="text-left">IP:{this.state.publicIPAddress}</p>
+                            <div className="col-sm-4">
+                                <p className="text-left">IP: {this.state.publicIPAddress}</p>
                             </div>
-                            <div className="col-sm-6">
-                                <p className="text-right">Taken on:{this.state.curTime}</p>
+                            <div className="col-sm-8">
+                                <p className="text-right">Taken on: {this.state.curTime}</p>
                             </div>
                         </div>
 
@@ -115,10 +115,10 @@ class WebcamCapture extends React.Component {
                         <div className="col-lg-12 capturedImageInfo">
                             <div className="infoBlur">.</div>
                             <div className="col-sm-6">
-                                <p className="text-left">Longitude:{this.state.longitude}</p>
+                                <p className="text-left">Longitude: {this.state.longitude}</p>
                             </div>
                             <div className="col-sm-6">
-                                <p className="text-right">Latitude:{this.state.latitude}</p>
+                                <p className="text-right">Latitude: {this.state.latitude}</p>
                             </div>
                         </div>
                     </div>
