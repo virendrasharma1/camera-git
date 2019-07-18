@@ -100,12 +100,14 @@ class WebcamCapture extends React.Component {
                     <div className="col-lg-12 p-0">
                         <div className="col-lg-12 capturedImageInfoBottom">
                             <div className="infoBlur">.</div>
-                            <div className="col-sm-5">
-                                <p className="text-left">IP: {this.state.publicIPAddress}</p>
-                            </div>
-                            <div className="col-sm-7">
-                                <p className="text-right">Taken on: {this.state.curTime}</p>
-                            </div>
+                            <table className="">
+                                <tr>
+                                    <p>
+                                        <span className="pull-left">IP: {this.state.publicIPAddress}</span>
+                                        <span className="pull-right">Taken on: {this.state.curTime}</span>
+                                    </p>
+                                </tr>
+                            </table>
                         </div>
 
                         <div className="col-lg-12 p-0 capturedImage">
@@ -114,12 +116,14 @@ class WebcamCapture extends React.Component {
 
                         <div className="col-lg-12 capturedImageInfo">
                             <div className="infoBlur">.</div>
-                            <div className="col-sm-6">
-                                <p className="text-left">Longitude: {this.state.longitude}</p>
-                            </div>
-                            <div className="col-sm-6">
-                                <p className="text-right">Latitude: {this.state.latitude}</p>
-                            </div>
+                            <table className="">
+                                <tr>
+                                    <p>
+                                        <span className="pull-left">Longitude: {this.state.longitude}</span>
+                                        <span className="pull-right">Latitude: {this.state.latitude}</span>
+                                    </p>
+                                </tr>
+                            </table>
                         </div>
                     </div>
 
