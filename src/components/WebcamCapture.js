@@ -41,11 +41,17 @@ class WebcamCapture extends React.Component {
         });
     };
 
-    returnBack = () => {
+    returnBackAlart = () => {
         this.setState({
             showDetails: false
         });
         alert('Data send Successfully!')
+    };
+
+    returnBack = () => {
+        this.setState({
+            showDetails: false
+        });
     };
 
     getMyLocation = (e) => {
@@ -127,9 +133,15 @@ class WebcamCapture extends React.Component {
                         </div>
                     </div>
 
-                    <div className="text-center captureAgain align-v-h-center">
+                    <div className="col-lg-12 text-center captureAgain">
                         <button  onClick={this.returnBack}
-                                className="btn btn-info"
+                                 className="btn btn-info mr-5"
+                                 data-toggle="modal"
+                                 data-target="#exampleModal">
+                            BACK
+                        </button>
+                        <button  onClick={this.returnBackAlart}
+                                className="btn btn-info send-btn"
                                 data-toggle="modal"
                                 data-target="#exampleModal">
                             SEND

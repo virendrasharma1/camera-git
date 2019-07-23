@@ -170,3 +170,6 @@ video{
 table{
   display: grid;
 }
+.send-btn{
+  margin-left: 1em;
+}
